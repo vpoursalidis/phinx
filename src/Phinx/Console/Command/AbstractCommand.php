@@ -86,6 +86,7 @@ abstract class AbstractCommand extends Command
     {
         $this->addOption('--configuration', '-c', InputOption::VALUE_REQUIRED, 'The configuration file to load');
         $this->addOption('--parser', '-p', InputOption::VALUE_REQUIRED, 'Parser used to read the config file. Defaults to YAML');
+        $this->addOption('--domain', '-d', InputOption::VALUE_REQUIRED, 'The domain to execute the migrations. Defaults to app.talentlms.com');
     }
 
     /**
@@ -220,7 +221,7 @@ abstract class AbstractCommand extends Command
             $useDefault = true;
         }
 
-        $cwd = getcwd();
+        $cwd = getcwd() .'/libraries;
 
         // locate the phinx config file (default: phinx.yml)
         // TODO - In future walk the tree in reverse (max 10 levels)
