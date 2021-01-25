@@ -221,7 +221,7 @@ abstract class AbstractCommand extends Command
             $useDefault = true;
         }
 
-        $cwd = getcwd() .'/libraries;
+        $cwd = getcwd() .'/libraries';
 
         // locate the phinx config file (default: phinx.yml)
         // TODO - In future walk the tree in reverse (max 10 levels)
